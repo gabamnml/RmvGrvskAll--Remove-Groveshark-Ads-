@@ -1,5 +1,5 @@
 // ==UserScript== 
-// @author 		   gabamnml
+// @author     	   gabamnml
 // @name           RmvGrvskAll
 // @version 	   1.1
 // @description    Remove ads to grooveshark & and minimalise theme
@@ -16,12 +16,13 @@ if (listen) {
     GM_addStyle("#homeFooterSeparator { display: none !important }");
     GM_addStyle("#homeFooter { display: none !important }");
     GM_addStyle("#theme_home { display: none !important }");
+    GM_addStyle("#theme_page_header { display: none !important }");
 
     var timer = null;
     
     var removeAds = function() {
         if (window.GS) {
-            if (window.GS.ad && document.getElementById("capital") && document.getElementById("application") && document.getElementById("searchCapitalWrapper") && document.getElementById("homeFooterSeparator") && document.getElementById("homeFooter") && document.getElementById("theme_home")) {
+            if (window.GS.ad && document.getElementById("capital") && document.getElementById("application") && document.getElementById("searchCapitalWrapper") && document.getElementById("homeFooterSeparator") && document.getElementById("homeFooter") && document.getElementById("theme_home") && document.getElementById("theme_page_header")) {
                 window.GS.ad.hideAdBar();
                 window.$(window).resize();
                 if (timer) clearInterval(timer);
@@ -34,18 +35,19 @@ if (listen) {
 }
 
 else { 
-    GM_addStyle("#application { margin-right: 0px !important }");
+GM_addStyle("#application { margin-right: 0px !important }");
     GM_addStyle("#capital { display: none !important }");
     GM_addStyle("#searchCapitalWrapper { display: none !important }");
     GM_addStyle("#homeFooterSeparator { display: none !important }");
     GM_addStyle("#homeFooter { display: none !important }");
     GM_addStyle("#theme_home { display: none !important }");
+    GM_addStyle("#theme_page_header { display: none !important }");
 
     var timer = null;
     
     var removeAds = function() {
         if (window.GS) {
-            if (window.GS.ad && document.getElementById("capital") && document.getElementById("application") && document.getElementById("searchCapitalWrapper") && document.getElementById("homeFooterSeparator") && document.getElementById("homeFooter") && document.getElementById("theme_home")) {
+            if (window.GS.ad && document.getElementById("capital") && document.getElementById("application") && document.getElementById("searchCapitalWrapper") && document.getElementById("homeFooterSeparator") && document.getElementById("homeFooter") && document.getElementById("theme_home") && document.getElementById("theme_page_header")) {
                 window.GS.ad.hideAdBar();
                 window.$(window).resize();
                 if (timer) clearInterval(timer);
